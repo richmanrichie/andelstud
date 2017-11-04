@@ -36,4 +36,8 @@ myApp.controller('studentsController', ['$scope', '$http', '$location', '$routeP
 			window.location.href = ('#!/students');
 		});
 	}
+
+	$scope.setStud = function(id){
+		$scope.presStud = id;
+	}
 }])

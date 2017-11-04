@@ -22,7 +22,7 @@
                         <li class="list-group-item"><h4>Phone Number:</h4>{{student.phone}}</li>
                     </ul>
                     <div class="row col-md-12">
-                        <a href="#!/students/edit/{{student._id}}" class="btn btn-primary">Edit student</a>
+                        <a href="#!/students/edit/{{student._id}}" ng-click="setStud(student._id)" class="btn btn-primary">Edit student</a>
                         <a href="#" ng-click="removeStudent(student._id)" class="btn btn-danger">Delete student</a>
                     </div>
                 </div>
