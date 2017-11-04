@@ -1,0 +1,25 @@
+img {
+    width: 100%;
+}
+.closeBtn{
+    color: rgb(170, 43, 43);
+    border: 1px solid rgb(170, 43, 43);;
+    border-radius: 2px;
+    padding: 5px;
+    text-decoration: none;
+}
+a.closeBtn:hover{
+    text-decoration: none;
+    color: inherit;
+}
+
+.stu-thumb{
+    width:50px;
+    height:50px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.stu-thumb img{
+    width: 100%;
+}

@@ -1,0 +1,85 @@
+<!-- <div class="panel panel-success" ng-init="getStudents()">
+    <div class="panel-heading">Students</div>
+    <div class="panel-body">
+        <div class="row">
+            <div ng-repeat="student in students">
+                <div class="col-md-6">
+                    <div class="col-md-6">
+                        <h2>{{student.name}}</h2>
+                        <p>{{student.class}}</p>
+                        <a href="#!/students/details/{{student._id}}" class="btn btn-primary">View Details</a>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="thumbnail" ng-src="{{student.image_url}}" alt="hello">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="row col-md-12">
+        <a href="#!/students/add" class="btn btn-primary pull-right" ng-click='addBtn = true' ng-hide = 'addBtn'>Add Student</a>
+    </div>
+</div>
+<br>
+<div class="panel panel-success" ng-init="getStudents()">
+        <div class="panel-heading">Students</div>
+        <div class="panel-body">
+            <div class="row">
+                <div>
+                    <div class="col-md-12">
+                        <div class="form-group form-inline pull-right">
+                            <label for="">Search</label>
+                            <input type="text" class="form-control" ng-model="searchStu">
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="col-md-12">
+                      <table class="table table-hover">
+                        <thead>
+                            <tr>
+                            <th>S/N</th>
+                            <!-- <th>Pic</th> -->
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Class</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="student in students | filter : searchStu">
+                            <tr>
+                            <td>{{$index + 1}}</td>
+                            <!-- <td class="thumbnail stu-thumb"><a href="" ng-click="changeDetails(student.firstName, student.image_url)" data-toggle="modal" data-target="#myModal"><img ng-src="{{student.image_url}}" alt=""></a></td> -->
+                            <td>{{student.firstName}}</td>
+                            <td>{{student.lastName}}</td>
+                            <td>{{student.class | uppercase}}</td>
+                            <td>{{student.phone}}</td>
+                            <td><a ng-href="#!/students/details/{{student._id}}">Manage Student</a></td>
+                            </tr>
+                        </tbody>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">{{modalName}}</h4>
+                </div>
+                <div class="modal-body">
+                  <img ng-src="{{modalImage}}" alt="">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>

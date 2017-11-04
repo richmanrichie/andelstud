@@ -1,0 +1,50 @@
+<html ng-app="myApp">
+<head>
+<title>StudR</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body>
+<nav class="navbar navbar-inverse" ng-init="siteManage" ng-controller="appCtrl">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span> 
+            </button>
+            <a class="navbar-brand" href="#">{{webname}}</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="#!/students">Manage Student</a></li> 
+                <li><a href="#!/classes">Manage Classes</a></li> 
+            </ul>
+            </div>
+        </div>
+        </nav>
+        <section class="container" >
+                <a href="#!/books" class="btn btn-primary" ng-show="manage">Go Back</a>
+        </section>
+        <br>
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-md-3"></div> -->
+                <div class="col-md-12">
+                    <div ng-view></div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="/bower_components/jquery/dist/jquery.js"></script>
+        <script src="/bower_components/angular/angular.js"></script>
+        <script src="/bower_components/angular-route/angular-route.js"></script>
+        <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="/app.js"></script>
+        <script src="/controllers/app.js"></script>
+        <script src="/controllers/students.js"></script>
+        <script src="/controllers/classes.js"></script>
+        <script src="/controllers/comments.js"></script>
+    </body>
+</html>

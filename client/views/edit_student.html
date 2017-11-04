@@ -1,0 +1,43 @@
+<div class="panel panel-success">
+        <div class="panel-heading">
+            <h3 class="panel-title">Add student</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-10">
+                    <form ng-submit="updateStudent()" ng-init="getStudent()">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" class="form-control" ng-model="student.firstName" placeholder="First Name">
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" class="form-control" ng-model="student.lastName" placeholder="Last Name">
+                            </div>
+                            <div ng-controller="classesController">
+                                <div class="form-group" ng-init="getClasses()">
+                                    <label>Class</label>
+                                    <select ng-model="student.class" class="form-control">
+                                        <option value="{{student.class}}" selected>{{student.class}}</option>
+                                        <option ng-repeat='class in classes' value="{{class.class_name}}">{{class.class_name}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Age</label>
+                                <input type="date" class="form-control" ng-model="student.age" placeholder="Age" value="{{student.age | date:'yyyy-MM-dd'}}">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="text" class="form-control" ng-model="student.phone" placeholder="Phone">
+                                </div>
+                            <div class="form-group">
+                                    <label>Image</label>
+                                    <input type="text" class="form-control" ng-model="student.image_url" placeholder="Pages">
+                                </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
